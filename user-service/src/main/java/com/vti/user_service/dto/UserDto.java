@@ -1,4 +1,4 @@
-package com.vti.account_service.dto;
+package com.vti.user_service.dto;
 
 import lombok.Getter;
 import lombok.Setter;

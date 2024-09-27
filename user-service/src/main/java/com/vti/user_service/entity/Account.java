@@ -1,8 +1,7 @@
-package com.vti.transaction_service.entity;
+package com.vti.user_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.vti.account_service.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +27,13 @@ public class Account {
     @JsonBackReference
     private User user;
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    // Quan hệ với các giao dịch từ tài khoản này (fromAccount)
+    @OneToMany(mappedBy = "fromAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
-    private List<Transaction> transactions;
+    private List<Transaction> sentTransactions;
+
+    // Quan hệ với các giao dịch tới tài khoản này (toAccount)
+    @OneToMany(mappedBy = "toAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Transaction> receivedTransactions;
 }

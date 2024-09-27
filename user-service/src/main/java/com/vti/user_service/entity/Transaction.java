@@ -1,4 +1,4 @@
-package com.vti.transaction_service.entity;
+package com.vti.user_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
@@ -14,15 +14,17 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Ánh xạ tài khoản nguồn (From Account)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_account_id", nullable = false)
     @JsonBackReference
-    private Account fromAccountId;
+    private Account fromAccount;
 
+    // Ánh xạ tài khoản đích (To Account)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_account_id", nullable = false)
     @JsonBackReference
-    private Account toAccountId;
+    private Account toAccount;
 
     @Column(name = "amount", nullable = false)
     private Double amount;

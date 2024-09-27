@@ -1,14 +1,13 @@
 package com.vti.transaction_service.form;
 
+import com.vti.transaction_service.entity.Account;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UserCreateForm {
-    private String name;
-
-    private String email;
-
-    private String phone;
+public class TransactionCreateForm {
+    private Account fromAccount;
+    private Account toAccount;
+    private Double amount;
 }

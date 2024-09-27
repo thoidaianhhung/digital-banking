@@ -1,20 +1,13 @@
-package com.vti.account_service.mapper;
+package com.vti.transaction_service.mapper;
 
-import com.vti.account_service.dto.AccountDto;
-import com.vti.account_service.entity.Account;
-import com.vti.account_service.form.AccountCreateForm;
-import com.vti.account_service.form.AccountUpdateForm;
+import com.vti.transaction_service.dto.AccountDto;
+import com.vti.transaction_service.entity.Account;
+import com.vti.transaction_service.form.AccountUpdateForm;
 
 public class AccountMapper {
 
     private AccountMapper() {
         throw new IllegalStateException("Utility class");
-    }
-
-    public static Account map(AccountCreateForm form) {
-        var account = new Account();
-        account.setBalance(form.getBalance());
-        return account;
     }
 
     public static AccountDto map(Account account) {

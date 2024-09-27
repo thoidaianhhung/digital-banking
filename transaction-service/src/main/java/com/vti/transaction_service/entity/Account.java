@@ -1,4 +1,4 @@
-package com.vti.user_service.entity;
+package com.vti.transaction_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

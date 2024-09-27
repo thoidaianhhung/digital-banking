@@ -1,4 +1,4 @@
-package com.vti.account_service.form;
+package com.vti.user_service.form;
 
 import lombok.Getter;
 import lombok.Setter;

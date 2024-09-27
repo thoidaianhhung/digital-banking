@@ -1,8 +1,11 @@
-package com.vti.account_service.entity;
+package com.vti.user_service.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -10,7 +13,6 @@ import lombok.Setter;
 @Table(name = "user")
 public class User {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -22,4 +24,9 @@ public class User {
 
     @Column(name = "phone", length = 50, nullable = false, unique = true)
     private String phone;
+
+    // OneToMany: Một User có nhiều Account
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Account> accounts;
 }
