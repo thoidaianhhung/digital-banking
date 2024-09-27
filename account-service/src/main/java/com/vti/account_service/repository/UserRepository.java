@@ -1,6 +1,7 @@
-package com.vti.user_service.repository;
+package com.vti.account_service.repository;
 
-import com.vti.user_service.entity.User;
+
+import com.vti.account_service.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

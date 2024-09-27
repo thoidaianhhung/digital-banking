@@ -5,10 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserCreateForm {
-    private String name;
-
-    private String email;
-
-    private String phone;
+public class AccountCreateForm {
+    private Double balance;
 }
