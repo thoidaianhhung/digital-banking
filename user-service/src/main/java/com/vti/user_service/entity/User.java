@@ -1,4 +1,4 @@
-package com.vti.user_service.entity;
+package com.vti.account_service.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,6 +22,4 @@ public class User {
 
     @Column(name = "phone", length = 50, nullable = false, unique = true)
     private String phone;
-
-
 }
